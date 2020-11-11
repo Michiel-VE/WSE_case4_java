@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<!--Vermeld hier je naam en studentennummer-->
+<!--Van Eynde Michiel r0794174-->
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="img/style.css"/>
+    <title>Klant registratie</title>
+</head>
+<body>
+<div class="container">
+    <h1>Nieuwe klant</h1>
+
+    <form class="row" action="2_klantFormulier">
+            <div class="form-group col-12 col-md-4">
+                <label for="voornaam">Voornaam: </label>
+                <input required id="voornaam" class="rounded p-1 bg-light" name="voornaam" type="text" placeholder="Voornaam">
+            </div>
+            <div class="form-group  col-12 col-md-4">
+                <label for="familienaam">Familienaam: </label>
+                <input required id="familienaam" class="rounded p-1 bg-light" name="familienaam" type="text"
+                       placeholder="Familienaam">
+            </div>
+            <div class="form-group  col-12 col-md-4">
+                <label for="geboortejaar">Geboortejaar: </label>
+                <input required id="geboortejaar" class="rounded p-1 bg-light" name="geboortejaar" type="number"
+                       placeholder="vb. 1992">
+            </div>
+            <div class="form-group col-12 col-md-4" th:each="supermarkt: ${supermarkten}">
+                <input type="radio" name="supermarktIndex" th:id="${supermarktStat.index}"
+                       th:value="${supermarktStat.index}" th:checked="${supermarktStat.index} == 0"/>
+                <label th:for="${supermarktStat.index}"><span th:text="${supermarkt.getNaam()}"></span></label>
+            </div>
+        <button id="aanmaak_klant" class="m-2 btn btn-outline-success" type="submit">Ga door als klant met aanmaak
+            klantenkaartnr
+        </button>
+    </form>
+
+    <div>
+        <a href="/" class="btn btn-warning m-2">Terug naar startpagina</a>
+    </div>
+</div>
+</body>
+</html>

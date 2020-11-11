@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="img/style.css"/>
+    <title>Personeel</title>
+</head>
+<body>
+<div class="container">
+    <h1>Dit zijn de personeelsleden</h1>
+    <ul>
+        <li class="lijst ml-3" th:each="personeelslid: ${personeelsleden}" th:text="${personeelslid.toString()}">
+        </li>
+    </ul>
+    <div>
+        <a href="/" class="btn btn-warning m-2">Terug naar startpagina</a>
+    </div>
+</div>
+</body>
+</html>

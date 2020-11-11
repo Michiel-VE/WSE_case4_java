@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Zoeken</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="img/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>We hebben deze afdeling voor jou gevonden:</h1>
+    <h2 th:text="${afdeling.getNaam()}"></h2>
+    <div class="row">
+        <p class="col-12 col-md-6" th:if="${afdeling.isGekoeld() == true}" th:text="'Afdeling is gekoeld'"></p>
+        <p class="col-12 col-md-6" th:unless="${afdeling.isGekoeld() == true}"
+           th:text="'Afdeling is niet gekoeld'"></p>
+        <p class="col-12 col-md-6"
+           th:text="'Verantwoordelijke ' + ${afdeling.getVerantwoordelijke().getFamilienaam() + ' ' + afdeling.getVerantwoordelijke().getVoornaam()}"></p>
+        <img id="zoek_img" class="col-12" onerror="this.src='img/geen_afdeling.jpg'" th:src="@{${afdeling.getFoto()}}"
+             th:alt="${afdeling.getNaam()}">
+    </div>
+    <div>
+        <a href="/" class="btn btn-warning m-2">Terug naar startpagina</a>
+    </div>
+</div>
+
+</body>
+</html>

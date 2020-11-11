@@ -1,0 +1,145 @@
+/*voeg hier je zelfgekozen stylesheet toe*/
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Chakra Petch', sans-serif;
+    margin: 1rem;
+    background-color: #FFFAFA;
+    color: rgba(0,0,0,0.6);
+}
+
+h1, h2, h3, h4 {
+    margin: 10px;
+    font-family: 'El Messiri', sans-serif;
+    font-variant: small-caps;
+}
+
+h1 {
+    border-bottom: 1px solid black;
+}
+
+p {
+    display: flex;
+
+}
+
+p a {
+    display: flex;
+    flex: 1 1 100%;
+    justify-content: center;
+    padding: 5px;
+}
+
+p.btn {
+    margin: 0;
+    padding: 0;
+}
+
+ol{
+    list-style-position: inside;
+}
+
+ol ul {
+    margin-left: 20px;
+    height: 175px;
+    list-style: circle;
+    list-style-position: inside;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+form.row {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+
+}
+
+button#aanmaak_klant {
+    width: 100%;
+}
+
+#lijstKlant {
+    width: 300px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.4);
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+#inhoud ol {
+    margin: auto;
+    list-style-position: inside;
+}
+
+#aanmaakKlant {
+    height: 200px;
+}
+
+#zoek {
+    display: inline-block;
+    max-width: 100%;
+}
+
+#list{
+    height: 50px;
+}
+
+.container {
+    width: 100%;
+    margin: 100px auto;
+    border: 3px solid black;
+    box-shadow: 3px 3px 3px #666666;
+    background-color: rgba(255, 255, 240,0.5);
+    color: inherit;
+}
+
+.tac {
+    text-align: center;
+}
+
+.unstyled::-webkit-inner-spin-button,
+.unstyled::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+.btn-outline-success {
+    width: 100%;
+}
+
+.btn-outline-success:hover a {
+    background-color: unset;
+    color: white !important;
+}
+
+.naam {
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+.lijst {
+    list-style-type: upper-roman;
+}
+
+.border{
+    border: 5px solid black;
+    box-sizing: border-box;
+    width: 50%;
+}
+
+@media screen and (min-width: 992px) {
+    #zoek_img{
+        padding: 3rem 10rem 3rem 10rem;
+    }
+}

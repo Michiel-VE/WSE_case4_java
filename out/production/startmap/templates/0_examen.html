@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Personeelsleden met wedee</title>
+</head>
+<body>
+<h1>Personeelsleden met hun wedde:</h1>
+<ul>
+    <li th:each="personeel : ${wedde}">
+        <span th:text="${personeel.getFamilienaam() + ' ' + personeel.getVoornaam() + ' ' + personeel.getWedde() + '€ per maand'}"></span>
+    </li>
+</ul>
+
+<p>
+    <a href="/">Terug naar homepagina</a>
+</p>
+</body>
+</html>

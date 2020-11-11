@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<!--Vermeld hier je naam en studentennummer-->
+<!--Vermeld hier je naam en studentennummer-->
+<!--Van Eynde Michiel r0794174-->
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="img/style.css"/>
+    <title>Personeel registratie</title>
+</head>
+<body>
+<div class="container">
+    <h1>Nieuw personeelslid</h1>
+    <form class="row p-2" action="4_personeelFormulier">
+            <div class="form-group col-12 col-md-4">
+                <label for="voornaam">Voornaam: </label>
+                <input required id="voornaam" class="rounded p-1 bg-light" name="voornaam" type="text"
+                       placeholder="Voornaam">
+            </div>
+            <div class="form-group col-12 col-md-4">
+                <label for="familienaam">Familienaam: </label>
+                <input required id="familienaam" class="rounded p-1 bg-light" name="familienaam" type="text"
+                       placeholder="Familienaam">
+            </div>
+            <div class="form-group col-12 col-md-4">
+                <label for="dienst">In dienst sinds: </label>
+                <input required id="dienst" class="rounded p-1 bg-light unstyled" name="dienst" type="date">
+            </div>
+
+            <div>
+                <label for="wedde">Wedde: </label>
+                <input type="text" name="wedde" id="wedde">
+            </div>
+        <button class="m-2 btn btn-outline-success" type="submit">Registreer personeelslid</button>
+    </form>
+    <div>
+        <a href="/" class="btn btn-warning m-2">Terug naar startpagina</a>
+    </div>
+</div>
+</body>
+</html>

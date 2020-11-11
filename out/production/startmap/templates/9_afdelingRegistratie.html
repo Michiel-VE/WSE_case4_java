@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<!--Vermeld hier je naam en studentennummer-->
+<!--Van Eynde Michiel r0794174-->
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="img/style.css"/>
+    <title>Nieuwe afdeling</title>
+</head>
+<body>
+<div class="container">
+    <h1>Nieuwe afdeling</h1>
+    <div class="tac">
+        <form action="10_afdelingFormulier">
+            <div class="row mt-3 mb-1">
+                <div class="form-group col-12 col-md-4">
+                    <label for="naam">Naam: </label>
+                    <input required id="naam" class="rounded p-1 bg-light" name="naam" type="text" placeholder="Naam Afdeling">
+                </div>
+                <div class="form-group col-12 col-md-4">
+                    <label for="foto">Foto: </label>
+                    <input required id="foto" class="rounded p-1 bg-light" name="foto" type="text" placeholder="Foto">
+                </div>
+                <div class="form-group col-12 col-md-4">
+                    <input type="checkbox" id="gekoeld" name="gekoeld">
+                    <label for="gekoeld">Gekoeld?</label>
+                </div>
+            </div>
+
+            <div class="row mt-1 mb-2">
+                <div class="form-group col-12 col-md-6">
+                    <label for="v_afdeling"></label>
+                    <select id="v_afdeling" name="v_afdeling" size="1">
+                        <option value="-1">Wie is de verantwoordelijke voor deze afdeling?</option>
+                        <option th:value="${verantwoordelijkeStat.index}"
+                                th:each="verantwoordelijke: ${personeelsleden}"
+                                th:text="${verantwoordelijke.getVoornaam()} + ' ' + ${verantwoordelijke.getFamilienaam()} "></option>
+                    </select>
+                </div>
+                <div class="form-group col-12 col-md-6">
+                    <label for="supermarkt"></label>
+                    <select id="supermarkt" name="supermarkt" size="1">
+                        <option value="-1">Aan welke supermarkt wil je deze afdeling toevoegen?</option>
+                        <option th:value="${supermarktStat.index}" th:each="supermarkt: ${supermarkten}"
+                                th:text="${supermarkt.getNaam()}"></option>
+                    </select>
+                </div>
+            </div>
+            <button class="m-2 btn btn-outline-success" type="submit">Registreer afdeling</button>
+        </form>
+
+        <div>
+            <a href="/" class="btn btn-warning m-2">Terug naar startpagina</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

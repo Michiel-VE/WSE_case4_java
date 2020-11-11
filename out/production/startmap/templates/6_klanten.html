@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="img/style.css"/>
+    <title>Klanten</title>
+</head>
+<body>
+<div class="container">
+    <h1>Dit zijn de klanten</h1>
+    <div id="inhoud">
+        <ol class="row">
+            <li th:each="klant: ${klanten}" class="col-12 col-md-6">
+                <span class="naam" th:text="${klant.getVoornaam() + ' ' + klant.getFamilienaam()}"></span>
+                <ul id="lijstKlant">
+                    <li th:text="Geboortejaar + ':' + ' ' + ${klant.getGeboortejaar()}"></li>
+                    <li th:text="Klantenkaartnr + ':' + ' ' + ${klant.getKlantenkaartnr()}"></li>
+                    <ul class="pl-4 pb-2">
+                        <li th:each="product: ${klant.getBoodschappenlijst()}" th:text="${product}"></li>
+                    </ul>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <div>
+        <a href="/" class="btn btn-warning m-2">Terug naar startpagina</a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="nl" xmlns:th="http://www.thymeleaf.org">
+<!--Vermeld hier je naam en studentennummer-->
+<!--Van Eynde Michiel r0794174-->
+<head>
+    <meta charset="UTF-8">
+    <title>Supermarkten&dash;lijst</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="img/style.css"/>
+</head>
+<body>
+<div class="container">
+    <h1>Dit zijn alle geregistreerde supermarkten</h1>
+    <ul>
+        <li class="naam ml-3" th:each="supermarkt: ${supermarkten}">
+            <a th:href="@{/10_afdelingFormulier(supermarkt=${supermarktStat.index})}"
+               th:text="${supermarkt.getNaam()}"></a>
+        </li>
+    </ul>
+    <div>
+        <a href="/" class="btn btn-warning m-2">Terug naar startpagina</a>
+    </div>
+</div>
+</body>
+</html>
