@@ -40,7 +40,7 @@ public class Klant extends Persoon {
     }
 
     public String toString() {
-        return "Klant " + super.toString() + " met klantenkaartnr " + klantenkaartnr;
+        return "Klant " + super.toString() + " met klantenkaartnr " + '5';
 
     }
 }
